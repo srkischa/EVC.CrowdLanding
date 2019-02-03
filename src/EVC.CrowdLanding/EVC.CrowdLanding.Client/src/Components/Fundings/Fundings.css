@@ -1,0 +1,3 @@
+.table.table-bordered > tbody > tr {
+  cursor: pointer;
+}
