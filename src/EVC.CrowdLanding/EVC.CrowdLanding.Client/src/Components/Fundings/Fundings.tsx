@@ -6,17 +6,16 @@ import "./Fundings.css";
 type Funding = {
   id: string;
   description: string;
-  isInvestmentRequired: string;
+  investmentStatus: string;
   typeOfInvestment: string;
   investmentCompany: string;
   startTime: string;
   endTime: string;
-  [key: string]: string;
 };
 
 type FundingKeys = keyof Funding;
 
-type ColumnNames = { [K in FundingKeys]: string };
+type ColumnNames = { [K in FundingKeys]?: string };
 
 const columnsNames: ColumnNames = {
   description: "Description",
@@ -54,13 +53,10 @@ const Fundings: React.SFC<RouteComponentProps> = ({ history }) => {
         </thead>
         <tbody>
           {fundings.map((funding: Funding) => (
-            <tr
-              key={funding.description}
-              onClick={e => handleRowClick(e, funding.id)}
-            >
+            <tr key={funding.id} onClick={e => handleRowClick(e, funding.id)}>
               {Object.keys(columnsNames).map(columnName => (
-                <td key={`${funding.description}${columnName}`}>
-                  {funding[columnName]}
+                <td key={`${funding.id}${columnName}`}>
+                  {funding[columnName as FundingKeys]}
                 </td>
               ))}
             </tr>

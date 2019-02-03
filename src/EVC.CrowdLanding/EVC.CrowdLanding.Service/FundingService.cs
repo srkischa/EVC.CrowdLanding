@@ -13,6 +13,7 @@ namespace EVC.CrowdLanding.Service
     {
         private readonly IRepository<Funding> _fundingRepository;
         private readonly IUnitOfWork _unitOfWork;
+        private readonly int _userId = 1;
 
         public FundingService(IRepository<Funding> fundingRepository, IUnitOfWork unitOfWork)
         {
@@ -33,7 +34,7 @@ namespace EVC.CrowdLanding.Service
                     InvestmentCompany = funding.InvestmentCompany,
                     StartTime = funding.StartTime,
                     EndTime = funding.EndTime,
-                    IsFoundedByMe = funding.UsersFundings.Any(uf => uf.UserId == 1)
+                    IsFoundedByMe = funding.UsersFundings.Any(uf => uf.UserId == _userId)
                 })
                 .ToListAsync();
         }
@@ -52,7 +53,7 @@ namespace EVC.CrowdLanding.Service
                     InvestmentCompany = funding.InvestmentCompany,
                     StartTime = funding.StartTime,
                     EndTime = funding.EndTime,
-                    IsFoundedByMe = funding.UsersFundings.Any(uf => uf.UserId == 1)
+                    IsFoundedByMe = funding.UsersFundings.Any(uf => uf.UserId == _userId)
                 };
             }
             return null;
@@ -66,7 +67,7 @@ namespace EVC.CrowdLanding.Service
 
             if (funding != null)
             {
-                var isFoundedByMe = funding.UsersFundings.Any(uf => uf.UserId == 1);
+                var isFoundedByMe = funding.UsersFundings.Any(uf => uf.UserId == _userId);
 
                 if(!isFoundedByMe)
                 {

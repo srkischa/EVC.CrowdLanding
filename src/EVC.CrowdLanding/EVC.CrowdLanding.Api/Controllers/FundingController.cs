@@ -2,7 +2,6 @@
 using System.Linq;
 using System.Threading.Tasks;
 using EVC.CrowdLanding.Api.Model;
-using EVC.CrowdLanding.DomainModel;
 using EVC.CrowdLanding.Service;
 using EVC.CrowdLanding.Service.Model;
 using Microsoft.AspNetCore.Mvc;
@@ -60,9 +59,13 @@ namespace EVC.CrowdLanding.Api.Controllers
         }
 
         [HttpPost]
-        public async Task Post([FromBody] NewFundingDto value)
+        public async Task Post([FromBody] CreateUserFundingRequest request)
         {
-            await _fundingService.CreateUserFunding(value);
+            await _fundingService.CreateUserFunding(new NewFundingDto
+            {
+                FundingId = request.FundingId,
+                FundingAmount = request.FundingAmount
+            });
         }
     }
 }
