@@ -1,0 +1,20 @@
+version: "3.4"
+
+services:
+  sql.data:
+    environment:
+      - SA_PASSWORD=Pass@word
+      - ACCEPT_EULA=Y
+    ports:
+      - 5433:1433 # Important: In a production environment your should remove the external port
+
+  evc.crowdlanding.api:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ConnectionString=Server=sql.data;Database=Crowdfundings;User Id=sa;Password=Pass@word
+    ports:
+      - 5004:80
+
+  evc.crowdlanding.client:
+    ports:
+      - 3000:80

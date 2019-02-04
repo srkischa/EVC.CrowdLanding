@@ -3,13 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.168
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EVC.CrowdLanding.Api", "EVC.CrowdLanding.Api\EVC.CrowdLanding.Api.csproj", "{3AF3E1E0-865E-485C-8BEA-2210F8D97202}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EVC.CrowdLanding.Api", "EVC.CrowdLanding.Api\EVC.CrowdLanding.Api.csproj", "{3AF3E1E0-865E-485C-8BEA-2210F8D97202}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EVC.CrowdLanding.Data", "EVC.CrowdLanding.Data\EVC.CrowdLanding.Data.csproj", "{89AA3315-7060-4BD5-9719-7B876E1905BA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EVC.CrowdLanding.Data", "EVC.CrowdLanding.Data\EVC.CrowdLanding.Data.csproj", "{89AA3315-7060-4BD5-9719-7B876E1905BA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EVC.CrowdLanding.DomainModel", "EVC.CrowdLanding.DomainModel\EVC.CrowdLanding.DomainModel.csproj", "{B35B94AB-4D1D-4196-B8E5-9DAC9D91B804}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EVC.CrowdLanding.DomainModel", "EVC.CrowdLanding.DomainModel\EVC.CrowdLanding.DomainModel.csproj", "{B35B94AB-4D1D-4196-B8E5-9DAC9D91B804}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EVC.CrowdLanding.Service", "EVC.CrowdLanding.Service\EVC.CrowdLanding.Service.csproj", "{BE61D664-A046-4F93-8F04-8E8C67570CB1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EVC.CrowdLanding.Service", "EVC.CrowdLanding.Service\EVC.CrowdLanding.Service.csproj", "{BE61D664-A046-4F93-8F04-8E8C67570CB1}"
+EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{525D129D-7483-4A47-B7E1-805AB3F22AE5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{BE61D664-A046-4F93-8F04-8E8C67570CB1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BE61D664-A046-4F93-8F04-8E8C67570CB1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BE61D664-A046-4F93-8F04-8E8C67570CB1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{525D129D-7483-4A47-B7E1-805AB3F22AE5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{525D129D-7483-4A47-B7E1-805AB3F22AE5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{525D129D-7483-4A47-B7E1-805AB3F22AE5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{525D129D-7483-4A47-B7E1-805AB3F22AE5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

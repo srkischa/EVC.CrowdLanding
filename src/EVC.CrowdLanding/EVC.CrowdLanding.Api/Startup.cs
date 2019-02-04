@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Logging;
 using SiemensGamesa.NAMC.StitchingTool.Data;
 using Swashbuckle.AspNetCore.Swagger;
 
@@ -14,8 +15,11 @@ namespace EVC.CrowdLanding.Api
 {
     public class Startup
     {
-        public Startup(IConfiguration configuration)
+        private readonly ILogger<Startup> _logger;
+
+        public Startup(IConfiguration configuration, ILogger<Startup> logger)
         {
+            _logger = logger;
             Configuration = configuration;
         }
 
@@ -24,6 +28,9 @@ namespace EVC.CrowdLanding.Api
         public void ConfigureServices(IServiceCollection services)
         {
             var connectionString = Configuration.GetConnectionString("CrowdfundingsDbConnection");
+
+            _logger.LogInformation($"ConnectionString INFO: {connectionString}");
+            _logger.LogDebug($"ConnectionString DEBUG: {connectionString}");
 
             services.AddDbContext<CrowdFundingsDbContext>(options =>
                 options.UseSqlServer(connectionString, b => b.MigrationsAssembly("EVC.CrowdLanding.Api"))
