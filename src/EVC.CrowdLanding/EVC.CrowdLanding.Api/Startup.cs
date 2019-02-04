@@ -29,9 +29,6 @@ namespace EVC.CrowdLanding.Api
         {
             var connectionString = Configuration.GetConnectionString("CrowdfundingsDbConnection");
 
-            _logger.LogInformation($"ConnectionString INFO: {connectionString}");
-            _logger.LogDebug($"ConnectionString DEBUG: {connectionString}");
-
             services.AddDbContext<CrowdFundingsDbContext>(options =>
                 options.UseSqlServer(connectionString, b => b.MigrationsAssembly("EVC.CrowdLanding.Api"))
             );
